@@ -6,52 +6,32 @@ const employeeData = require('./employee.json');
 const petData = require('./pet.json');
 
 const seedDatabase = async () => {
-    await sequelize.sync({ force: false });
+    await sequelize.sync({ force: true });
 
-    const pets = await Pet.bulkCreate(petData, {
+    // Seeding pets first, assuming pets don't need foreign keys initially
+    await Pet.bulkCreate(petData, {
         individualHooks: true,
         returning: true,
     });
 
-    for (const pet of pets) {
-        await Pet.create({
-        ...pet,
-        owner_id: users[Math.floor(Math.random() * users.length)].id,
-        });
-    }
-
+    // Seeding customers
     const customers = await Customer.bulkCreate(customerData, {
         individualHooks: true,
         returning: true,
     });
 
-    for (const customer of customers) {
-    await Customer.create({
-      ...customer,
-      owner_id: users[Math.floor(Math.random() * users.length)].id,
-    });
+    // Assigning owner_id to pets
+    for (const pet of petData) {
+        await Pet.update({ owner_id: customers[Math.floor(Math.random() * customers.length)].id }, { where: { id: pet.id } });
+    }
 
-
-    const employees = await Employee.bulkCreate(employeeData, {
+    // Seeding employees
+    await Employee.bulkCreate(employeeData, {
         individualHooks: true,
         returning: true,
     });
 
-    for (const employee of employees) {
-        await Employee.create({
-        ...employee,
-        owner_id: users[Math.floor(Math.random() * users.length)].id,
-        });
-    }
-
-//   for (const project of projectData) {
-//     await Project.create({
-//       ...project,
-//       user_id: users[Math.floor(Math.random() * users.length)].id,
-//     });
-//   }
-
-  process.exit(0);
-}};
+    process.exit(0);
+};
 
 seedDatabase();

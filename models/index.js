@@ -2,6 +2,8 @@ const Customer = require('./customer');
 // const Employee = require('./employee');
 const Pet = require('./pet');
 
+const Employee = require('./employee');
+
 Customer.hasMany(Pet, {
   foreignKey: 'owner_id',
   onDelete: 'CASCADE'
@@ -13,4 +15,4 @@ Pet.belongsTo(Customer, {
 
 
 
-module.exports = { User, Project };
+module.exports = { Customer, Pet, Employee };

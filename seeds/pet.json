@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "pet_name": "Bella",
         "pet_age": 3,
         "pet_type": "Dog",
@@ -9,6 +10,7 @@
         "pet_image": ""
     },
     {
+        "id": 2,
         "pet_name": "Luna",
         "pet_age": 2,
         "pet_type": "Cat",
@@ -18,6 +20,7 @@
         "pet_image": ""
     },
     {
+        "id": 3,
         "pet_name": "Max",
         "pet_age": 1,
         "pet_type": "Dog",
@@ -27,6 +30,7 @@
         "pet_image": ""
     },
     {
+        "id": 4,
         "pet_name": "Simba",
         "pet_age": 4,
         "pet_type": "Cat",
@@ -36,6 +40,7 @@
         "pet_image": ""
     },
     {
+        "id": 5,
         "pet_name": "Zeke",
         "pet_age": 5,
         "pet_type": "Dog",
