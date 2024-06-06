@@ -1,0 +1,27 @@
+[
+    {
+      "employee_name": "Eli",
+      "employee_email": "Eli@hotmail.com",
+      "employee_phone": "123-456-7890",
+      "employee_password": "$2y$10$zcp3Km.hsn75e5Vy/nwOfONW1zKlJ5Phi24h1eXEsKJfhy/.d3/JK"
+    },
+    {
+      "employee_name": "Alex",
+      "employee_email": "Alex@gmail.com",
+      "employee_phone": "123-456-9183",
+      "employee_password": "$2y$10$WSUXzuYC0VELAg7kCWNrbezLL3ms9IM3lbKsxPwLG5A4ar0WjrNhG"
+    },
+    {
+      "employee_name": "Jaci",
+      "employee_email": "Jaci@aol.com",
+      "employee_phone": "123-456-5729",
+      "employee_password": "$2y$10$RCNagr1Ce5wuv8gHB3Us/er9LLpuRSFD8JaXptcif3PPzYj/Ieg/q"
+    },
+    {
+        "employee_name": "Ben",
+        "employee_email": "Ben@gmail.com",
+        "employee_phone": "123-456-5729",
+        "employee_password": "$2y$10$RCNagr1Ce5wuv8gHB3Us/er9LLpuRSFD8JaXptcif3PPzYj/Iedfx/q"
+    }
+  ]
+  
