@@ -6,7 +6,7 @@ const employeeData = require('./employee.json');
 const petData = require('./pet.json');
 
 const seedDatabase = async () => {
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ force: false });
 
     // Seeding pets first, assuming pets don't need foreign keys initially
     await Pet.bulkCreate(petData, {
