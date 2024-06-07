@@ -42,6 +42,7 @@ Pet.init(
     },
     owner_id: {
       type: DataTypes.INTEGER,
+      defaultValue: null,
       references: {
         model: 'customer',
         key: 'id',

@@ -38,6 +38,22 @@ router.post('/employeelogin', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// post route for employee to add a new pet
+router.post('/addpet', async (req, res) => {
+  try {
+    const newPet = await Pet.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newPet);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+
 // The logout route will be used to log a user out by destroying the session.
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
