@@ -1,3 +1,4 @@
+
 .navtabs {
     color: black;
 }
@@ -18,3 +19,43 @@
     padding: 0;
     margin: 0;
 }
+
+
+
+.flex-container {
+    display: flex;                /* Establishes flex context */
+    flex-wrap: wrap;              /* Allows items to wrap onto multiple lines */
+    justify-content: space-around; /* Distributes items evenly */
+    align-items: flex-start;      /* Aligns items at the start */
+    width: 100%;
+    padding: 90px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.col {
+    flex: 1 1 30%;                /* Allows items to grow, shrink, and sets a basis of 30% */
+    max-width: 30%;
+    margin: 10px;
+    box-sizing: border-box;       /* Includes padding and border in the element's total width and height */
+}
+
+
+
+.card-image img {
+    width: 100%;
+    height: auto;
+}
+
+.card-title {
+    position: absolute;
+    /* bottom: 16px;
+    left: 16px; */
+    /* color: #fff; */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* padding: 4px 8px;
+    border-radius: 4px; */
+}
+
