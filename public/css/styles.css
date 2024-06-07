@@ -1,0 +1,20 @@
+.navtabs {
+    color: black;
+}
+
+#title {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.brand {
+        font-family:'Franklin Gothic light', 'Arial Narrow', Arial, sans-serif;
+        font-size:medium;
+}
+
+
+#titleImg {
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
