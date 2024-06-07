@@ -7,7 +7,7 @@
         "pet_breed": "Golden Retriever",
         "is_available": true,
         "pet_description": "Bella is a very friendly dog who loves to play fetch.",
-        "pet_image": ""
+        "pet_image": "../assets/Bella.jpg"
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@
         "pet_breed": "Siamese",
         "is_available": true,
         "pet_description": "Luna is a very independent cat who loves to nap.",
-        "pet_image": ""
+        "pet_image": "../assets/Luna.jpg"
     },
     {
         "id": 3,
@@ -27,7 +27,7 @@
         "pet_breed": "Poodle",
         "is_available": true,
         "pet_description": "Max is a very energetic dog who loves to run.",
-        "pet_image": ""
+        "pet_image": "../assets/Max.jpg"
     },
     {
         "id": 4,
@@ -37,7 +37,7 @@
         "pet_breed": "Mainecoon",
         "is_available": true,
         "pet_description": "Simba is a very playful cat who loves to chase toys.",
-        "pet_image": ""
+        "pet_image": "../assets/Simba.jpg"
     },
     {
         "id": 5,
@@ -47,6 +47,6 @@
         "pet_breed": "Labrador",
         "is_available": true,
         "pet_description": "Zeke is a very loyal dog who loves to go on walks.",
-        "pet_image": ""
+        "pet_image": "../assets/Zeke.jpg"
     }
 ]
