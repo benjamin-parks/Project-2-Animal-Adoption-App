@@ -1,4 +1,9 @@
 
+
+
+
+
+
 .navtabs {
     color: black;
 }
@@ -45,7 +50,7 @@
 
 
 .card-image img {
-    width: 100%;
+    width: auto;
     height: auto;
 }
 

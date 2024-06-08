@@ -1,0 +1,89 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+
+/* anchors footer to the bottom of the page */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/*------------------------------------------*/
+
+
+
+/* header styles */
+.brand {
+  color: black;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 150%;
+}
+
+.headText {
+  color: black;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;  
+}
+
+/*---------------*/
+
+
+
+/* Main styles */
+#titleImg {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.flex-container {
+  display: flex;                /* Establishes flex context */
+  flex-wrap: wrap;              /* Allows items to wrap onto multiple lines */
+  justify-content: space-around; /* Distributes items evenly */
+  align-items: flex-start;      /* Aligns items at the start */
+  width: 100%;
+  padding: 90px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  
+}
+
+
+
+
+
+/*------------------------------------------*/
+
+/* footer styles */
+.footText {
+  color: black;
+  font-size: 100%;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.horizontal-list li {
+  display: inline-block;
+  margin-right: 40px;
+}
