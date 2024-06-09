@@ -8,53 +8,55 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../public/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../public/css/styles.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../public/css/employeestyle.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!-- <link href="../public/css/styles.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
 </head>
-
-<!-- {{!-- TO DO: edit file routes --}} -->
 
 
 <body>
+
   <!-- Navigation Bar -->
   <nav class="NA transparent" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand black-text">Paws &#38; Claws Adoption 🐶 Employee Portal</a>
+    <div class="nav-wrapper container"><a  href="#" class="brand">Paws &#38; Claws Adoption 🐶 Employee Portal</a>
       <ul class="right hide-on-med-and-down">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-small waves-effect waves-#212121 grey darken-4">New Pet</a>
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-small waves-effect waves-#212121 grey darken-4">New Employee</a>
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-small waves-effect waves-#212121 grey darken-4">Log Out</a>
+        <li><a href="#" class="headText">Log Out</a></li>
+        <!-- <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-small waves-effect waves-#212121 grey darken-4">Log In</a> -->
       </ul>
+
       <!-- Side Navigation Trigger -->
-      <!-- {{!-- TO DO: edit links --}} -->
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">New Pet</a></li>
-        <li><a href="#">New Employee</a></li>
         <li><a href="#">Log Out</a></li>
       </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
     </div>
   </nav>
 
-  <div class="row">
 
-    <div class="col s12 m4 l3"> 
-        <ul>
-            <li><a href="#">Active Profiles</a></li>
+
+  <!-- Main Content -->
+  <main>
+    <div class="row">
+      <div>
+        <div class="col s2 employee-nav">
+          <ul>
+            <li><a href="#" class="side-text hover-text">Active Profiles</a></li>
           </ul>
           <ul>
-            <li><a href="#">Adoption Inquiries</a></li>
+            <li><a href="#" class="side-text hover-text">Adoption Inquiries</a></li>
           </ul>
           <ul>
-            <li><a href="#">Employees</a></li>
+            <li><a href="#" class="side-text hover-text">Employees</a></li>
           </ul>
-    </div>
+        </div>
+      </div>
+  
 
-
-    <div class="container">
-        <div class="col s12 m8 l9">
+      
+      <div class="container">
+        <div class="col s10 pet-table ">
             <table class="highlight">
                 <thead>
-                <tr>
+                <tr class="grey lighten-3 tabpad">
                     <th>ID</th>
                     <th>Name</th>
                     <th>Type</th>
@@ -109,34 +111,52 @@
                 </tr>
                 </tbody>
             </table>
-
+  
         </div>
     </div>
-  
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
 
 
   <!-- Footer -->
   <footer class="page-footer NA transparent">
-    <div class="container">
-      <div class="row">
-      </div>
-    </div>
-    <div class="footer-copyright ">
-      <div class="container black-text">
-        <!-- {{!-- TO DO: correct amps --}} -->
-          Paws &#38; Claws Adoption
-          <!-- <a class="black-text text-lighten-4 right">123-456-7890</a> -->
-          <a class="black-text text-lighten-4 right">pawsandclaws@email.com</a>
-          <!-- <a class="black-text text-lighten-4 right">1011 Tails Ln, Meow MN 77654</a> -->
+    <div class="footer-copyright NA transparent  grey lighten-4">
+      <div class="container footText">
+          <ul class="center horizontal-list">
+            <li>123-456-7890</li>
+            <li>|</li>
+            <li>pawsandclaws@email.com</li>
+            <li>|</li>
+            <li>1011 Tails Ln, Meow MN 77654</li>
+          </ul>
       </div>
     </div>
   </footer>
+
 
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="../public/js/materialize.js"></script>
   <script src="../public/js/init.js"></script>
+
+
 
   </body>
 </html>

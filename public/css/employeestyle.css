@@ -1,0 +1,127 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+* {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+
+/* ------ header styles ------ */
+.brand {
+  color: black;
+  font-size: 120%;
+}
+
+.headText {
+  color: black; 
+}
+
+
+
+
+/*------ main styles ------*/
+
+ .hover-text {
+  transition: font-size 0.2s ease; 
+}
+
+
+.hover-text:hover {
+  color: orangered !important;
+  font-size: 120%;
+}
+
+
+
+
+.side-text {
+  color: black !important;
+  font-size: 100%;
+}
+
+
+
+.pet-table {
+ margin-top: 3%;
+ margin-left: 10% !important;
+
+}
+
+
+
+
+.employee-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.employee-nav ul {
+  padding: 0;
+  margin: 0 15px;
+}
+
+
+@media (min-width: 993px) {
+  .employee-nav {
+    flex-direction: column;
+  }
+
+
+  .employee-nav a {
+    display: block;
+    padding: 10px 0;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------ footer styles ------*/
+.footText {
+  color: black;
+  font-size: 100%;
+}
+
+
+.horizontal-list li {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+/*------ anchors footer -------*/
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+
+
+
