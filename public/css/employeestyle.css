@@ -109,7 +109,8 @@
 
 .horizontal-list li {
   display: inline-block;
-  margin-right: 40px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 /*------ anchors footer -------*/

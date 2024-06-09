@@ -33,7 +33,7 @@ Pet.init(
       defaultValue: true,
     },
     pet_description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     pet_image: {
