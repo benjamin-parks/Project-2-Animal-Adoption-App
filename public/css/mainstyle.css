@@ -10,6 +10,7 @@
 }
 
 
+
 /* ------ header styles ------ */
 .logo {
   color: black;
@@ -22,7 +23,6 @@
 
 
 
-
 /*------ main styles ------*/
 #titleImg {
   max-width: 100%;
@@ -31,56 +31,52 @@
   margin: 0;
 }
 
-
-
 .flex-container {
-  display: flex;                /* Establishes flex context */
-  flex-wrap: wrap;              /* Allows items to wrap onto multiple lines */
-  justify-content: center; /* Distributes items evenly */
-  /* align-items: flex-start;       */
-  /* Aligns items at the start */
+  display: flex;               
+  flex-wrap: wrap;              
+  justify-content: center;
   width: 100%;
   padding: 80px;
-  background-color: #fff;
-  /* border: 2px solid #ccc; */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /*border-radius: 8px; */
-  
+  background-color: #fff;  
 }
 
 
 
-/*------ card flex for pet search page ------*/
-#petflex {
-  flex: 1 1 auto;                /* Allows items to grow, shrink, and sets a basis of 30% */
-  /* max-width: 30%;
-  margin: 10px; */
-      /* Includes padding and border in the element's total width and height */
-}
-
-.card {
-  /* flex: 1 1 300px; */
-  max-width: 400px;
-}
-
+/*------ volunteer card ------*/
 .volunteer-card {
   margin-left: 10%;
   max-width: 500px;
 }
 
 
-/* ------ pet search card title ------*/
+
+/*------ pet card ------*/
+#petflex {
+  flex: 1 1 auto;                
+}
+
+.card {
+  max-width: 400px;
+}
+
 .card-title {
   background-color: rgba(0, 0, 0, 0.3);
   font-size: 20px !important;
   padding: 3% !important;
 }
 
-
-
 .action-text {
   color:black !important;
 }
+
+.hover-text {
+  transition: font-size 0.2s ease;
+}
+
+.hover-text:hover {
+  color: orangered !important;
+}
+
 
 
 /* ------ footer styles ------*/
@@ -89,11 +85,13 @@
   font-size: 100%;
 }
 
-
 .horizontal-list li {
   display: inline-block;
-  margin-right: 40px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
+
+
 
 /*------ anchors footer -------*/
 body {
@@ -104,16 +102,4 @@ body {
 
 main {
   flex: 1 0 auto;
-}
-
-
-
-
-.hover-text {
-  transition: font-size 0.2s ease; /* Smooth transition effect */
-}
-
-
-.hover-text:hover {
-  color: orangered !important;
 }
