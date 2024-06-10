@@ -1,127 +1,60 @@
-# Project-2
-# 15 Project 2: Interactive Full-Stack Application
 
-Projects play a key role in your journey to becoming a full-stack web developer. As you enter the last phase of the boot camp, you’ll begin to apply for development jobs. If you want to land interviews, your portfolio must feature high-quality deployed examples of your work—-and you can use your finished projects for that very purpose.
+# Paws & Claws Animal Adoption Application
 
-As your first opportunity to show employers your collaborative skills and coding abilities, this particular project will be a focal point of your portfolio. Employers want to see what you can do, but they also want to see how you work with other developers. The more examples of deployed collaborative work you have in your portfolio, the more likely you are to get an interview and a job.
+Welcome to Paws and Claws, an intuitive and user-friendly animal adoption application designed to help animals find their forever homes. Our platform connects potential pet adopters with a variety of rescued animals, making the adoption process seamless and efficient. This is project 2 for the U of M Coding Bootcamp. The challenge was to build a real-world interactive full-stack application using everything we have learned over the past 6 modules.
 
-## Project Requirements
+## Key Features
+Users:
+- **User Registration and Profiles:** Users can create profiles, save favorite animals for future reference, and submit adoption inquiry applications.
+- **Browse and Search:** Explore a wide range of animals available for adoption.
+- **Detailed Animal Profiles:** Each animal has a comprehensive profile with name, photo, and description
+- **Adoption Application:** Users can fill out and submit adoption applications directly through the platform, streamlining the process.
+  
+Employees:
+- **Employee Management:** Manage user accounts and permissions, ensuring secure access and control over sensitive information.
+- **Animal Management:** Easily add, update, or remove animal profiles with detailed information and photos.
+- **Application Management:** Review and process adoption applications efficiently.
 
-You and your group will use everything you’ve learned over the past six modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
 
-* Use Node.js and Express.js to create a RESTful API.
+## Screenshots
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
-* Use Handlebars.js as the template engine.
 
-* Use PostgreSQL and the Sequelize ORM for the database.
+## Usage Information
+Insert usage information
 
-* Have both GET and POST routes for retrieving and adding new data.
+## Demo
+Insert link to demo
 
-* Use at least one new library, package, or technology that we haven’t discussed.
 
-* Have a folder structure that meets the MVC paradigm.
+## Tech Stack
 
-* Include authentication (express-session and cookies).
+- **Frontend:** Materialize CSS
+- **Backend:** Node, Express
+- **Database:** PostgreSQL, Sequelize
+- **Authentication:** Bcrypt
+- **Package Management:** npm
 
-* Protect API keys and sensitive information with environment variables.
 
-* Be deployed using Render (with data).
+## Lessons Learned
+What did we learn/challenges/successes while building this project
 
-* Have a polished UI.
 
-* Be responsive.
+## Roadmap
+What do we plan to add/update in the future
 
-* Be interactive (i.e., accept and respond to user input).
 
-* Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+## Authors
+- [Alex Larrabee](https://github.com/alarrabee)
+- [Ben Parks](https://github.com/benjamin-parks)
+- [Eli Ward](https://github.com/ElijahWard4)
+- [Jaci Obeidzinski](https://github.com/JaciObeid)
 
-* Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-## Presentation Requirements
+## Acknowledgements
+ - Pet profile photos sourced from [Unsplash](https://unsplash.com/), under the [unsplash license](https://unsplash.com/license)
 
-Use this [project presentation template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing) to address the following:
 
-* Elevator pitch: a one minute description of your application
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-* Concept: What is your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to the deployed application and the GitHub repository. Use the [Deploy with Render and PostgreSQL](https://coding-boot-camp.github.io/full-stack/render/deploy-with-render-and-postgresql) post on The Full-Stack Blog if you need a reminder on how to deploy to Render.
-
-## Grading Requirements
-
-This project is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 25%
-
-* Satisfies the following code requirements:
-
-  * Application uses a Node.js and Express.js back end and uses both GET and POST routes for retrieving and adding new data.
-
-  * Application has a folder structure that meets the MVC paradigm and uses Handlebars.js as the template engine.
-
-  * Application is backed by a PostgreSQL database with a Sequelize ORM and protects API keys and sensitive information with environment variables.
-
-  * Application includes user authentication (express-session and cookies).
-
-  * Application uses at least one new library, package, or technology not covered in class.
-
-### Concept 10%
-
-* Application should be a unique and novel idea.
-
-* Your group should clearly and concisely articulate your project idea.
-
-### Deployment: 20%
-
-* Application deployed at live URL on Render and loads with no errors.
-
-* Application GitHub URL submitted.
-
-### Repository Quality: 10%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id-naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application is responsive.
-
-### Presentation 10%
-
-* Your group should present using a slide deck.
-
-* Every group member should speak during the presentation.
-
-* Your presentation should follow the [Project Presentation Template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing).
-
-### Collaboration 10%
-
-* There are no major disparities in the number of GitHub contributions between group members.
-
-## How to Submit Your Interactive Full-Stack Project
-
-**Each member of your group** is required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
