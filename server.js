@@ -4,7 +4,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 //Not necessary right now but could be used later if we want to add some variable function such as a favorited icon. 
 const helpers = require('./utils/helpers');
-
+const path = require('path');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
