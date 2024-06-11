@@ -40,14 +40,6 @@ Pet.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    owner_id: {
-      type: DataTypes.INTEGER,
-      defaultValue: null,
-      references: {
-        model: 'customer',
-        key: 'id',
-      },
-    },
   },
   {
     sequelize,

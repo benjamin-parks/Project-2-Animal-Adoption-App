@@ -1,0 +1,20 @@
+[
+    {
+        "customer_name": "John Doe",
+        "customer_email": "JohnDoe@email.com",
+        "customer_phone": "123-633-7890",
+        "pet_id": 1
+    },
+    {
+        "customer_name": "Jane Doe",
+        "customer_email": "JaneDoe@email.com",
+        "customer_phone": "123-633-7890",
+        "pet_id": 2
+    },
+    {
+        "customer_name": "Patrick Star",
+        "customer_email": "MyNamesNotRick@email.com",
+        "customer_phone": "123-456-7890",
+        "pet_id": 2
+    }
+]
