@@ -119,31 +119,33 @@ router.delete('/deletepet/:id', async (req, res) => {
 });
 
 // delete route for removing a customer from the database
-router.delete('/deletecustomer/:id', async (req, res) => {
-  if (!req.session.logged_in && !req.session.employee) {
-    res.status(401).json({ message: 'An employee has to be logged in to delete a customer.' });
-    res.redirect('/login');
-    return;
-  }
-  else {
-    try {
-      const customerData = await Customer.destroy({
-        where: {
-          id: req.params.id,
-        },
-      });
+// un-comment if we decide to add a customer database in the future 
+
+// router.delete('/deletecustomer/:id', async (req, res) => {
+//   if (!req.session.logged_in && !req.session.employee) {
+//     res.status(401).json({ message: 'An employee has to be logged in to delete a customer.' });
+//     res.redirect('/login');
+//     return;
+//   }
+//   else {
+//     try {
+//       const customerData = await Customer.destroy({
+//         where: {
+//           id: req.params.id,
+//         },
+//       });
   
-      if (!customerData) {
-        res.status(404).json({ message: 'No customer found with this id!' });
-        return;
-      }
+//       if (!customerData) {
+//         res.status(404).json({ message: 'No customer found with this id!' });
+//         return;
+//       }
   
-      res.status(200).json(customerData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  }
-});
+//       res.status(200).json(customerData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   }
+// });
 
 
 
