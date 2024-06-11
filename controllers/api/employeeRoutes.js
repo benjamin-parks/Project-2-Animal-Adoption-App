@@ -130,7 +130,7 @@ router.post('/login', async (req, res) => {
       req.session.logged_in = true;
       req.session.employee = true;
       
-      res.sendFile(path.join(__dirname, '../../views/03-employee-login.html'));
+      res.sendFile(path.join(__dirname, '../../public/home.html'));
     });
 
   } catch (err) {
