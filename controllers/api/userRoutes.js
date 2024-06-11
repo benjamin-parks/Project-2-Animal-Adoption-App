@@ -3,6 +3,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
 router.post('/login', async (req, res) => {
   try {
     // The findOne() method is used to find a single document in the collection that matches the query. In this case, it is used to find a user by their email address.
