@@ -1,0 +1,109 @@
+* {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+
+
+/* ------ header styles ------ */
+.logo {
+  color: black;
+  font-size: 150%;
+}
+
+.headText {
+  color: black; 
+}
+
+
+
+/*------ main styles ------*/
+#titleImg {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.flex-container {
+  display: flex;               
+  flex-wrap: wrap;              
+  justify-content: center;
+  width: 100%;
+  padding: 80px;
+  background-color: #fff;  
+}
+
+
+
+/*------ volunteer card ------*/
+.volunteer-card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+  max-width: 500px;
+}
+
+
+
+/*------ pet card ------*/
+#petflex {
+  flex: 1 1 auto;                
+}
+
+.card {
+  max-width: 400px;
+}
+
+.card-title {
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 20px !important;
+  padding: 3% !important;
+}
+
+.action-text {
+  color:black !important;
+  font-size: 120%;
+}
+
+.hover-text {
+  transition: font-size 0.2s ease;
+}
+
+.hover-text:hover {
+  color: orangered !important;
+  font-size: 140%;
+}
+
+
+
+/* ------ footer styles ------*/
+.footText {
+  color: black;
+  font-size: 100%;
+}
+
+.horizontal-list li {
+  display: inline-block;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+
+
+/*------ anchors footer -------*/
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
