@@ -74,14 +74,19 @@
 
   .employee-nav a {
     display: block;
-    padding: 10px 0;
     justify-content: center;
   }
 }
 
 
-
-
+/* style add image button on new pet form. */
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  padding: 12px;
+}
 
 
 
