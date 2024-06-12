@@ -94,7 +94,14 @@ router.get('/adopt', async (req, res) => {
   }
 });
 
-
+router.get('/addpet', async (req, res) => {
+  try{
+    res.sendFile(path.join(__dirname, '../../views/newpet-draft_copy.html'));
+  }
+  catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 /////////////// POSTS UNDER THIS LINE //////////////////////
 
@@ -142,22 +149,28 @@ router.post('/login', async (req, res) => {
 
 // post route for employee to add a new pet
   router.post('/addpet', async (req, res) => {
-    if (!req.session.logged_in && !req.session.employee) {
-        res.status(401).json({ message: 'An employee has to be logged in to add a pet.' });
-        return;
-        }
+    // if (!req.session.logged_in && !req.session.employee) {
+    //     res.status(401).json({ message: 'An employee has to be logged in to add a pet.' });
+    //     return;
+    //     }
     try {
+      let pet_image = '../../public/images/pets/default.jpg'; // Declare pet_image variable outside of the if block
+      
+      if (req.body.pet_image) { // Check if pet_image is provided
+        pet_image = req.body.pet_image; // Assign provided pet_image value
+      }
+      
       const newPet = await Pet.create({
         pet_name: req.body.pet_name,
         pet_age: req.body.pet_age,
         pet_type: req.body.pet_type,
         pet_breed: req.body.pet_breed,
         pet_description: req.body.pet_description,
-        pet_image: req.body.pet_image,
+        pet_image: pet_image, // Use the assigned value for pet_image
         is_available: true,
         owner_id: null,
       });
-  
+    
       res.status(200).json(newPet);
     } catch (err) {
       console.error('Error details:', err);
