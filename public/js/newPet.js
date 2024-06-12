@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
         if (response.ok) {
           // Redirect to a different page or refresh the current page
-          document.location.replace('/api/employees/addpet');
+          document.location.replace('/newPet');
         } else {
           alert('Failed to add pet');
         }
