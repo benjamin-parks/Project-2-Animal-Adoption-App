@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Paws &#38; Claws Adoption</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../public/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../public/css/employeestyle.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="NA transparent" role="navigation">
+    <div class="nav-wrapper container"><a  href="#" class="logo">Paws &#38; Claws Adoption 🐶 Employee Portal</a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#" class="headText">Add Animal</a></li>
+        <li><a href="#" class="headText">Add Employee</a></li>
+        <li><a href="#" class="btn-small waves-effect waves-#212121 grey darken-3">Log Out</a></li>
+      </ul>
+
+      <!-- Side Navigation Trigger -->
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Log Out</a></li>
+        <li><a href="#">Add Employee</a></li>
+        <li><a href="#">Add Animal</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
+    </div>
+  </nav>
+
+  <main class="row">
+
+    <h3 class="center">Add New Animal</h3>
+    <div class="container">
+      <form class="col s12">
+        <div class="row">
+
+          <div class="input-field col s6">
+            <i class="material-icons prefix">pets</i>
+            <input id="icon_pet" type="text" class="validate">
+            <label for="icon_pet" id="petName">Name</label>
+          </div>
+
+          <div class="input-field col s6">
+            <i class="material-icons prefix">cake</i>
+            <input id="icon_name" type="text" class="validate">
+            <label for="icon_name" id="petAge">Age</label>
+          </div>
+
+          <div class="input-field col s6">
+            <i class="material-icons prefix">assignment</i>
+            <input id="icon_phone" type="tel" class="validate">
+            <label for="icon_phone" id="petType">Type</label>
+          </div>
+
+          <div class="input-field col s6">
+            <i class="material-icons prefix">format_bold</i>
+            <input id="icon_email" type="text" class="validate">
+            <label for="icon_email" id="petBreed">Breed</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">message</i>
+            <textarea id="icon_mess" class="materialize-textarea"></textarea>
+            <label for="icon_mess" id="petDescription">Description</label>
+          </div>
+
+          <!-- <div class="input-field col s12">
+            <i class="material-icons prefix">add_a_photo</i>
+            <label class="custom-file-upload">
+            <input type="file" id="myFile" name="filename">
+            Choose File
+          </label>
+          </div> -->
+
+          <button id="addPetButton" class="btn waves-effect waves-light right" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+          <!-- <a class="waves-effect waves-light btn-small red"><i class="material-icons right">cancel</i>Cancel</a> -->
+        </div>
+      </form>
+    </div>
+
+
+  </main>
+
+
+
+  
+
+
+  <!-- Footer -->
+  <footer class="page-footer NA transparent">
+    <div class="footer-copyright NA transparent  grey lighten-4">
+      <div class="container footText">
+          <ul class="center horizontal-list">
+            <li>123-456-7890</li>
+            <li>pawsandclaws@email.com</li>
+            <li>1011 Tails Ln, Meow MN 77654</li>
+          </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../public/js/materialize.js"></script>
+  <script src="../public/js/init.js"></script>
+
+  </body>
+</html>

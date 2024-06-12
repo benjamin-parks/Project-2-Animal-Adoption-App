@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
-const path = require('path');
+// const path = require('path');
 // const public = require('../public/css');
 
 // The withAuth middleware is used to check if a user is logged in before allowing them to access certain routes. If the user is not logged in, they will be redirected to the login page.
