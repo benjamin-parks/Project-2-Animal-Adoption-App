@@ -14,6 +14,7 @@ Pet.init(
     pet_name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true, // Ensure pet_name is unique
     },
     pet_age: {
       type: DataTypes.INTEGER,
@@ -49,5 +50,6 @@ Pet.init(
     modelName: 'pet',
   }
 );
+
 
 module.exports = Pet;
