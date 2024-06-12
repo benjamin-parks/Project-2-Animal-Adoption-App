@@ -1,16 +1,17 @@
-
+{{#each petsArray}}
 <div class="col s12 m3" id="petflex">
   <div class="card card-panel hoverable">
     <div class="card-image">
-      <img src="{{pet.pet_image}}">
-      <span class="card-title">{{pet.pet_name}}</span>
+      <img src="{{pet_image}}">
+      <span class="card-title">{{pet_name}}</span>
     </div>
     <div class="card-content">
-      <p>{{pet.pet_description}}</p>
+      <p>{{pet_description}}</p>
     </div>
     <div class="card-action center">
-      <a href="#" class="action-text hover-text hover-text:hover" >Adopt Me</a>
+      <a href="#" class="action-text hover-text hover-text:hover" style="color:red">Adopt Me</a>
       <a class="btn-floating waves-effect teal lighten-1"><i class="material-icons">grade</i></a>
     </div>
   </div>
 </div>
+{{/each}}
