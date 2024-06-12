@@ -35,6 +35,8 @@ Insert link to demo
 - **Authentication:** Bcrypt
 - **Package Management:** npm
 
+## Deployed Application
+Link to the website
 
 ## Lessons Learned
 What did we learn/challenges/successes while building this project
@@ -44,17 +46,18 @@ What did we learn/challenges/successes while building this project
 What do we plan to add/update in the future
 
 
-## Authors
-- [Alex Larrabee](https://github.com/alarrabee)
-- [Ben Parks](https://github.com/benjamin-parks)
-- [Eli Ward](https://github.com/ElijahWard4)
-- [Jaci Obeidzinski](https://github.com/JaciObeid)
+## Contributors and Roles
+- [Alex Larrabee](https://github.com/alarrabee): what alex worked on
+- [Ben Parks](https://github.com/benjamin-parks):  what ben worked on
+- [Eli Ward](https://github.com/ElijahWard4): what eli worked on
+- [Jaci Obeidzinski](https://github.com/JaciObeid): what jaci worked on
 
 
 ## Acknowledgements
- - Pet profile photos sourced from [Unsplash](https://unsplash.com/), under the [unsplash license](https://unsplash.com/license)
+- Guidance provided by U of M Coding Bootcamp Instructor (Chris Woolcott), and TA (Steven Castro-Mercado).
+- Pet profile photos sourced from [Unsplash](https://unsplash.com/), under the [unsplash license](https://unsplash.com/license)
 
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
 
