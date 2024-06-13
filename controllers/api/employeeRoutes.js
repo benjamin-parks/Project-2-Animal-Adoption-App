@@ -1,7 +1,7 @@
 // This file will contain the routes to handle user login and logout.
 // The login route will be used to log a user in by checking their email and password against the database.
 const router = require('express').Router();
-const { User, Pet, Customer } = require('../../models');
+const { User, Pet, Customer, Employee } = require('../../models');
 const path = require('path');
 
 
@@ -50,19 +50,39 @@ router.get('/login', async (req, res) => {
 });
 
 
-router.get('/listemployees', async (req, res) => {
-  // uncomment once we have login-session functionality
-  // if (!req.session.logged_in && !req.session.employee) {
-  //   res.redirect('/employeelogin');
-  //   return;
-  // }
+
+//renders add new employee form
+router.get("/newemployee", async (req, res) => {
   try {
-    res.sendFile(path.join(__dirname, '../../views/06-employees.html'));
+    res.render("newemployee", { layout: 'employeemain' });
   }
-  catch (err) {
-    res.status(500).json(err);
+  catch(err) {
+    res.status(500).send("Form Not Found");
   }
 });
+
+// router.post("/newemployee", async(req, res) => {
+//   const employee = await Employee.create(req.body);
+//   res.status(200).json(employee);
+// });
+
+
+
+
+
+// router.get('/listemployees', async (req, res) => {
+//   // uncomment once we have login-session functionality
+//   // if (!req.session.logged_in && !req.session.employee) {
+//   //   res.redirect('/employeelogin');
+//   //   return;
+//   // }
+//   try {
+//     res.sendFile(path.join(__dirname, '../../views/06-employees.html'));
+//   }
+//   catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 
 

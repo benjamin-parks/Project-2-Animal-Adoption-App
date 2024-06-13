@@ -38,6 +38,8 @@ router.get("/allpets", async (req, res) => {
 });
 
 
+
+
 //renders add new animal form
 router.get("/newpet", async (req, res) => {
   try {
@@ -47,13 +49,23 @@ router.get("/newpet", async (req, res) => {
     res.status(500).send("Form Not Found");
   }
 });
-
-
 router.post("/newpet", async(req, res) => {
-  //console.log(req.body);
   const petData = await Pet.create(req.body);
   res.status(200).json(petData);
 });
+
+
+//renders add new employee form
+router.get("/newemployee", async (req, res) => {
+  try {
+    res.render("newemployee", { layout: 'employeemain' });
+  }
+  catch(err) {
+    res.status(500).send("Form Not Found");
+  }
+});
+
+
 
 
 // pet adoption form
@@ -88,6 +100,10 @@ router.post('/inquiries', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+
+
+
 
 
 
