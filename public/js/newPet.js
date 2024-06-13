@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
         if (response.ok) {
           // Redirect to a different page or refresh the current page
-          document.location.replace('/newPet');
+          document.location.replace('/employeehome');
         } else {
           alert('Failed to add pet');
         }
