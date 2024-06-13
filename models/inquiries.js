@@ -23,11 +23,11 @@ Inquiries.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    pet_name: {
-      type: DataTypes.STRING,
+    pet_id: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'pet',
-        key: 'pet_name',
+        key: 'id',
       },
     },
   },

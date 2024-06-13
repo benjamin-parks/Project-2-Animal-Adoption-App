@@ -153,6 +153,7 @@ router.post('/login', async (req, res) => {
     //     res.status(401).json({ message: 'An employee has to be logged in to add a pet.' });
     //     return;
     //     }
+    console.log("test add pet route", req.body)
     try {
       let pet_image = '../../public/images/pets/default.jpg'; // Declare pet_image variable outside of the if block
       
@@ -170,7 +171,7 @@ router.post('/login', async (req, res) => {
         is_available: true,
         owner_id: null,
       });
-    
+    console.log("newPet", newPet)
       res.status(200).json(newPet);
     } catch (err) {
       console.error('Error details:', err);
