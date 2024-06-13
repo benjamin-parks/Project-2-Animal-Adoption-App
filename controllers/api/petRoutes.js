@@ -5,6 +5,8 @@ const Pet = require('../../models/pet');
 const { Inquiries } = require('../../models');
 
 
+
+//RENDERS HOME PAGE
 router.get('/', async (req, res) => {
   try {
     res.sendFile(path.join(__dirname, '../../public/home.html'));
@@ -14,6 +16,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+//RENDERS ABOUT US PAGE
 router.get('/about-us', async (req, res) => {
   try {
     res.sendFile(path.join(__dirname, '../../public/about-us.html'));
@@ -24,7 +28,7 @@ router.get('/about-us', async (req, res) => {
 });
 
 
-//renders all animals available for adoption on the /allpets page
+//RENDERS ADOPTABLE ANIMALS PAGE
 router.get("/allpets", async (req, res) => {
   try {
   let petData = await Pet.findAll();
@@ -39,8 +43,23 @@ router.get("/allpets", async (req, res) => {
 
 
 
+//RENDERS ADOPTION APPLICATION/INQUIRY FORM
+router.get("/adoptapp", async (req, res) => {
+  try {
+    res.render("adoptionapp", { layout: 'main' });
+  }
+  catch(err) {
+    res.status(500).send("Form Not Found");
+  }
+});
 
-//renders add new animal form
+
+
+
+
+
+
+//RENDERS ADD NEW PET FORM
 router.get("/newpet", async (req, res) => {
   try {
     res.render("newpet", { layout: 'employeemain' });
@@ -49,13 +68,15 @@ router.get("/newpet", async (req, res) => {
     res.status(500).send("Form Not Found");
   }
 });
+
+//POSTS NEW PET
 router.post("/newpet", async(req, res) => {
   const petData = await Pet.create(req.body);
   res.status(200).json(petData);
 });
 
 
-//renders add new employee form
+//RENDERS ADD NEW EMPLOYEE FORM
 router.get("/newemployee", async (req, res) => {
   try {
     res.render("newemployee", { layout: 'employeemain' });
@@ -64,6 +85,38 @@ router.get("/newemployee", async (req, res) => {
     res.status(500).send("Form Not Found");
   }
 });
+
+
+//RENDERS EMPLOYEE PORTAL HOME PAGE
+router.get("/employeehome", async (req, res) => {
+  try {
+    res.render("employeehome", { layout: 'employeemain' });
+  }
+  catch(err) {
+    res.status(500).send("Page Not Found");
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
