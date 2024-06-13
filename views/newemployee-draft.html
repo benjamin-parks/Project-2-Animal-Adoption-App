@@ -7,8 +7,8 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../public/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../public/css/employeestyle.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/css/employeestyle.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 
 
@@ -36,39 +36,39 @@
 
   <main class="row">
 
-    <h3>Add New Animal</h3>
+    <h3 class="center">Add New Animal</h3>
     <div class="container">
       <form class="col s12">
         <div class="row">
 
           <div class="input-field col s6">
             <i class="material-icons prefix">pets</i>
-            <input id="icon_pet" type="text" class="validate">
-            <label for="icon_pet" id="petName">Name</label>
+            <input id="pet_Name" type="text" class="validate">
+            <label for="pet_Name" id="petName">Name</label>
           </div>
 
           <div class="input-field col s6">
             <i class="material-icons prefix">cake</i>
-            <input id="icon_name" type="text" class="validate">
-            <label for="icon_name" id="petAge">Age</label>
+            <input id="pet_Age" type="text" class="validate">
+            <label for="pet_Age" id="petAge">Age</label>
           </div>
 
           <div class="input-field col s6">
             <i class="material-icons prefix">assignment</i>
-            <input id="icon_phone" type="tel" class="validate">
-            <label for="icon_phone" id="petType">Type</label>
+            <input id="pet_Type" type="tel" class="validate">
+            <label for="pet_Type" id="petType">Type</label>
           </div>
 
           <div class="input-field col s6">
             <i class="material-icons prefix">format_bold</i>
-            <input id="icon_email" type="text" class="validate">
-            <label for="icon_email" id="petBreed">Breed</label>
+            <input id="pet_Breed" type="text" class="validate">
+            <label for="pet_Breed" id="petBreed">Breed</label>
           </div>
 
           <div class="input-field col s12">
             <i class="material-icons prefix">message</i>
-            <textarea id="icon_mess" class="materialize-textarea"></textarea>
-            <label for="icon_mess" id="petDescription">Description</label>
+            <textarea id="pet_Description" class="materialize-textarea"></textarea>
+            <label for="pet_Description" id="petDescription">Description</label>
           </div>
 
           <!-- <div class="input-field col s12">
@@ -111,8 +111,9 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="../public/js/materialize.js"></script>
-  <script src="../public/js/init.js"></script>
+  <script src="/js/materialize.js"></script>
+  <script src="/js/init.js"></script>
+  <script src="/js/newPet.js"></script>
 
   </body>
 </html>

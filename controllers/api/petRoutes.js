@@ -53,7 +53,9 @@ router.post("/api/newpet", async(req, res) => {
   //console.log(req.body);
   const petData = await Pet.create(req.body);
   res.status(200).json(petData);
-})
+});
+
+
 // pet adoption form
 router.get("/inquiries", async (req, res) => {
 
