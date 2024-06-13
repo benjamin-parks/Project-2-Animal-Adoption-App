@@ -80,13 +80,13 @@
 
 
 /* style add image button on new pet form. */
-input[type="file"] {
+/* input[type="file"] {
   display: none;
 }
 .custom-file-upload {
   border: 1px solid #ccc;
   padding: 12px;
-}
+} */
 
 
 

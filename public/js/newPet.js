@@ -9,26 +9,28 @@ document.addEventListener('DOMContentLoaded', () => {
       const petType = document.querySelector('#pet_Type').value.trim();
       const petBreed = document.querySelector('#pet_Breed').value.trim();
       const petDescription = document.querySelector('#pet_Description').value.trim();
+      // const imageEl = document.getElementById("petImage").value.trim();
   
       if (isNaN(petAge) || petAge < 0) {
         alert('Please enter a valid age');
         return;
       } else if (petName && petType && petBreed && petDescription) {
-        const response = await fetch('/api/employees/addpet', {
+        const response = await fetch('/newPet', {
           method: 'POST',
           body: JSON.stringify({
             pet_name: petName,
             pet_age: petAge,
             pet_type: petType,
             pet_breed: petBreed,
-            pet_description: petDescription,
+            pet_description: petDescription
+            // pet_image: imageEl,
           }),
           headers: { 'Content-Type': 'application/json' },
         });
   
         if (response.ok) {
           // Redirect to a different page or refresh the current page
-          document.location.replace('/api/employees/addpet');
+          document.location.replace('/newPet');
         } else {
           alert('Failed to add pet');
         }
