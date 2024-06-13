@@ -41,7 +41,7 @@ router.get("/allpets", async (req, res) => {
 //renders add new animal form
 router.get("/newpet", async (req, res) => {
   try {
-    res.render("newpet");
+    res.render("newpet", { layout: 'employeemain' });
   }
   catch(err) {
     res.status(500).send("Form Not Found");
@@ -53,7 +53,9 @@ router.post("/api/newpet", async(req, res) => {
   //console.log(req.body);
   const petData = await Pet.create(req.body);
   res.status(200).json(petData);
-})
+});
+
+
 // pet adoption form
 router.get("/inquiries", async (req, res) => {
 

@@ -94,14 +94,14 @@ router.get('/adopt', async (req, res) => {
   }
 });
 
-router.get('/addpet', async (req, res) => {
-  try{
-    res.sendFile(path.join(__dirname, '../../views/newpet-draft_copy.html'));
-  }
-  catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/addpet', async (req, res) => {
+//   try{
+//     res.sendFile(path.join(__dirname, '../../views/newpet-draft_copy.html'));
+//   }
+//   catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 /////////////// POSTS UNDER THIS LINE //////////////////////
 
