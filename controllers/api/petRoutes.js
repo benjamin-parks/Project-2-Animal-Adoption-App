@@ -41,7 +41,7 @@ router.get("/allpets", async (req, res) => {
 //renders add new animal form
 router.get("/newpet", async (req, res) => {
   try {
-    res.render("newpet");
+    res.render("newpet", { layout: 'employeemain' });
   }
   catch(err) {
     res.status(500).send("Form Not Found");
