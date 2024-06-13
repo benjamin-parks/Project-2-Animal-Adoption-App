@@ -3,7 +3,7 @@
 const router = require('express').Router();
 const { User, Pet, Customer } = require('../../models');
 const path = require('path');
-
+const { hashPassword, validatePassword } = require('../utils/helpers');
 
 router.get('/', async (req, res) => {
     // uncomment once we have login-session functionality
@@ -109,20 +109,20 @@ router.get('/adopt', async (req, res) => {
 
 
 
+//employee login route
 router.post('/login', async (req, res) => {
   try {
     // The findOne() method is used to find a single document in the collection that matches the query. In this case, it is used to find a user by their email address.
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const employeeData = await Employee.findOne({ where: { email: req.body.email } });
 
-    if (!userData) {
+    if (!employeeData) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
 
-    // The checkPassword() method is used to check the password entered by the user against the hashed password stored in the database.
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await validatePassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -133,7 +133,7 @@ router.post('/login', async (req, res) => {
 
     // The save() method is used to save the session and will store the session in the store.
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.employee_id = employeeData.id;
       req.session.logged_in = true;
       req.session.employee = true;
       
@@ -145,6 +145,28 @@ router.post('/login', async (req, res) => {
   }
 });
 
+//employee signup route
+router.post('/signup', async (req, res) => {
+  try {
+    const hashedPassword = await hashPassword(req.body.password);
+    const newEmployee = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      phone: req.body.phone,
+      password: hashedPassword,
+    });
+
+    req.session.save(() => {
+      req.session.user_id = newEmployee.id;
+      req.session.logged_in = true;
+
+      res.json({ employee: newEmployee, message: 'You are now signed up!' });
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
 
 
 // post route for employee to add a new pet
@@ -237,6 +259,33 @@ router.delete('/deletepet/:id', async (req, res) => {
       }
   
       res.status(200).json(petData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
+});
+
+// delete route for removing an employee from the database
+router.delete('/deleteemployee/:id', async (req, res) => {
+  if (!req.session.logged_in && !req.session.employee) {
+    res.status(401).json({ message: 'An employee has to be logged in to delete an employee.' });
+    res.redirect('/login');
+    return;
+  }
+  else {
+    try {
+      const employeeData = await Employee.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+
+      if (!employeeData) {
+        res.status(404).json({ message: 'No employee found with this id!' });
+        return;
+      }
+
+      res.status(200).json(employeeData);
     } catch (err) {
       res.status(500).json(err);
     }

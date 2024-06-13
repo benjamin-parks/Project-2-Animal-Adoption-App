@@ -18,6 +18,10 @@ Employee.init(
     employee_email: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
     },
     employee_phone: {
       type: DataTypes.STRING,
@@ -26,6 +30,9 @@ Employee.init(
     employee_password: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate : {
+        len: [8],
+      },
     },
   },
   {

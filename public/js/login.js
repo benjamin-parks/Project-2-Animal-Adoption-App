@@ -46,13 +46,22 @@ const loginForm = async (event) => {
     }
   };
   
-  document
-  //whatever the class name of the form is 
-    .querySelector('.login-form')
-    .addEventListener('submit', loginForm);
+  document.querySelector('#login-form').addEventListener('submit', loginForm);
+  document .querySelector('#signup-form').addEventListener('submit', signupForm);
+
+  //handle the logout button
+  const logout = async () => {
+    const response = await fetch('/employee/logout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok) {
+      document.location.replace('/employee/login');
+    } else {
+      alert(response.statusText);
+    }
+  };
   
-  document
-  //whatever the class name of the form is 
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupForm);
+  document.querySelector('#logout').addEventListener('click', logout);
+  document.querySelector('#logout-mobile').addEventListener('click', logout);
   
