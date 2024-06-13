@@ -14,7 +14,7 @@ Pet.init(
     pet_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true, // Ensure pet_name is unique
+      unique: true, 
     },
     pet_age: {
       type: DataTypes.INTEGER,

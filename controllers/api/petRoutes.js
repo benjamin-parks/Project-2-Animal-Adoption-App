@@ -75,12 +75,12 @@ router.post('/inquiries', async (req, res) => {
 
     const newInquiry = await Inquiries.create({
       pet_id: pet.id, // Use the pet_id here
-      pet_name: pet.pet_name,
       customer_name: req.body.customer_name,
       customer_phone: req.body.customer_phone,
       customer_email: req.body.customer_email,
       customer_message: req.body.customer_message,
     });
+
 
     res.status(200).json(newInquiry);
   } catch (err) {
