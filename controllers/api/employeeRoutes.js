@@ -3,7 +3,7 @@
 const router = require('express').Router();
 const { User, Pet, Customer, Employee } = require('../../models');
 const path = require('path');
-// const { hashPassword, validatePassword } = require('../utils/helpers'); ---------------------
+const { hashPassword, validatePassword } = require('../../utils/helpers');
 
 // router.get('/', async (req, res) => {
     // uncomment once we have login-session functionality
