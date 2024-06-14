@@ -120,12 +120,37 @@ router.get("/employeehome", async (req, res) => {
 
 
 //RENDERS EMPLOYEE PORTAL ADOPTION INQUIRIES PAGE
+
 router.get("/petinquiries", async (req, res) => {
   try {
-    res.render("petinquiries", { layout: 'employeemain' });
-  }
-  catch(err) {
-    res.status(500).send("Page Not Found");
+    const inquiries = await Inquiries.findAll({
+      include: {
+        model: Pet,
+        attributes: ['pet_name'] // Include only the fields you need
+      }
+    });
+
+    const petsArray = inquiries.map(inquiry => {
+      return {
+        id: inquiry.id,
+        pet_id: inquiry.pet_id,
+        customer_name: inquiry.customer_name,
+        pet_name: inquiry.pet ? inquiry.pet.pet_name : 'Unknown', // Handle potential undefined Pet
+        customer_email: inquiry.customer_email,
+        customer_phone: inquiry.customer_phone,
+        updated_at: inquiry.createdAt.toLocaleDateString() // Adjust date format if needed
+      };
+    });
+
+    console.log("test", petsArray);
+
+    res.render("petinquiries", { 
+      layout: 'employeemain', 
+      petsArray 
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
   }
 });
 
@@ -145,8 +170,82 @@ router.get("/employees", async (req, res) => {
 
 
 
+// update pet availabilty to false at given ID 
+// router.put('/petinquiries/approve/:id', async (req, res) => {
+//   try {
+//     const inquiry = await Pet.update(
+//       { is_available: false },
+//       { where: { id: req.params.id } }
+//     );
 
+//     if (!inquiry) {
+//       res.status(404).json({ message: 'No inquiry found with this id' });
+//       return;
+//     }
 
+//     res.status(200).json(inquiry);
+//   } catch (err) {
+//     console.error('Error details:', err);
+//     res.status(400).json(err);
+//   }
+// });
+
+// approve pet inquiry delete inquiry and pet from databases
+router.delete('/petinquiries/approve/:id', async (req, res) => {
+  try {
+    // get pet id from inquiry relationship
+    const inquiryForPetID = await Inquiries.findOne({
+      where: {
+        id: req.params.id,
+      },
+    });
+    const pet = await Pet.destroy({
+      where: {
+        id: inquiryForPetID.pet_id,
+      },
+    });
+    if (!pet) {
+      res.status(404).json({ message: 'No pet found with this id' });
+      return;
+    }
+    const inquiry = await Inquiries.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!inquiry) {
+      res.status(404).json({ message: 'No inquiry found with this id' });
+      return;
+    }
+
+    res.status(200).json(inquiry);
+  } catch (err) {
+    console.error('Error details:', err);
+    res.status(500).json(err);
+  }
+});
+
+// deny inquiry delete inquiry from database
+router.delete('/petinquiries/deny/:id', async (req, res) => {
+  try {
+    const inquiry = await Inquiries.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!inquiry) {
+      res.status(404).json({ message: 'No inquiry found with this id' });
+      return;
+    }
+
+    res.status(200).json(inquiry);
+  } catch (err) {
+    console.error('Error details:', err);
+    res.status(500).json(err);
+  }
+});
 
 
 
