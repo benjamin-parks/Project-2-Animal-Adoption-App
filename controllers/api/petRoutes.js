@@ -28,7 +28,7 @@ router.get('/about-us', async (req, res) => {
 });
 
 
-//RENDERS ADOPTABLE ANIMALS PAGE
+//RENDERS ADOPTABLE ANIMALS PAGE WITH CARDS FOR ALL PETS
 router.get("/allpets", async (req, res) => {
   try {
   let petData = await Pet.findAll();
@@ -56,9 +56,6 @@ router.get("/adoptapp", async (req, res) => {
 
 
 
-
-
-
 //RENDERS ADD NEW PET FORM
 router.get("/newpet", async (req, res) => {
   try {
@@ -76,6 +73,7 @@ router.post("/newpet", async(req, res) => {
 });
 
 
+
 //RENDERS ADD NEW EMPLOYEE FORM
 router.get("/newemployee", async (req, res) => {
   try {
@@ -87,7 +85,7 @@ router.get("/newemployee", async (req, res) => {
 });
 
 
-//RENDERS EMPLOYEE PORTAL HOME PAGE
+//RENDERS EMPLOYEE PORTAL HOME PAGE - ACTIVE PET PROFILES IS THE DEFAULT VIEW
 router.get("/employeehome", async (req, res) => {
   try {
     res.render("employeehome", { layout: 'employeemain' });
@@ -101,8 +99,28 @@ router.get("/employeehome", async (req, res) => {
 
 
 
+//RENDERS EMPLOYEE PORTAL ADOPTION INQUIRIES PAGE
+router.get("/petinquiries", async (req, res) => {
+  try {
+    res.render("petinquiries", { layout: 'employeemain' });
+  }
+  catch(err) {
+    res.status(500).send("Page Not Found");
+  }
+});
 
 
+
+
+//RENDERS EMPLOYEE PORTAL CURRENT EMPLOYEES PAGE
+router.get("/employees", async (req, res) => {
+  try {
+    res.render("employees", { layout: 'employeemain' });
+  }
+  catch(err) {
+    res.status(500).send("Page Not Found");
+  }
+});
 
 
 
