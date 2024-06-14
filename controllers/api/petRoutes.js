@@ -68,10 +68,30 @@ router.get("/newpet", async (req, res) => {
 
 //POSTS NEW PET
 router.post("/newpet", async(req, res) => {
-  const petData = await Pet.create(req.body);
-  res.status(200).json(petData);
+  try {
+    let pet_image = '../../public/images/pets/default.jpg'; // Declare pet_image variable outside of the if block
+    
+    if (req.body.pet_image) { // Check if pet_image is provided
+      pet_image = req.body.pet_image; // Assign provided pet_image value
+    }
+    
+    const newPet = await Pet.create({
+      pet_name: req.body.pet_name,
+      pet_age: req.body.pet_age,
+      pet_type: req.body.pet_type,
+      pet_breed: req.body.pet_breed,
+      pet_description: req.body.pet_description,
+      pet_image: pet_image, // Use the assigned value for pet_image
+      is_available: true,
+      owner_id: null,
+    });
+  console.log("newPet", newPet)
+    res.status(200).json(newPet);
+  } catch (err) {
+    console.error('Error details:', err);
+    res.status(400).json(err);
+  }
 });
-
 
 
 //RENDERS ADD NEW EMPLOYEE FORM
