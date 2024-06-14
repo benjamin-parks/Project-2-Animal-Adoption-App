@@ -2,7 +2,7 @@ const router = require('express').Router();
 const path = require('path');
 
 const Pet = require('../../models/pet');
-const { Inquiries } = require('../../models');
+const { Inquiries, Employee } = require('../../models');
 
 
 
@@ -160,13 +160,49 @@ router.get("/petinquiries", async (req, res) => {
 //RENDERS EMPLOYEE PORTAL CURRENT EMPLOYEES PAGE
 router.get("/employees", async (req, res) => {
   try {
-    res.render("employees", { layout: 'employeemain' });
-  }
-  catch(err) {
-    res.status(500).send("Page Not Found");
+    const employees = await Employee.findAll();
+
+    const employeesArray = employees.map(employee => {
+      return {
+        id: employee.id,
+        employee_name: employee.employee_name,
+        employee_email: employee.employee_email,
+        employee_phone: employee.employee_phone,
+      };
+    });
+
+    console.log("test", employeesArray);
+
+    res.render("employees", { 
+      layout: 'employeemain', 
+      employeesArray 
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
   }
 });
 
+
+router.delete('/employees/:id', async (req, res) => {
+  try {
+    const employeeData = await Employee.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!employeeData) {
+      res.status(404).json({ message: 'No employee found with this id' });
+      return;
+    }
+
+    res.status(200).json(employeeData);
+  } catch (err) {
+    console.error('Error details:', err);
+    res.status(500).json(err);
+  }
+});
 
 
 
