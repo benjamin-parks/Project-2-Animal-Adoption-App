@@ -15,9 +15,20 @@
             <label for="pet_Age">Age</label>
           </div>
 
-          <div class="input-field col s6">
-            <i class="material-icons prefix">assignment</i>
-            <input id="pet_Type" type="tel" class="validate">
+          
+          <div class="input-field dropdown-constent col s6"> <i class="material-icons prefix">assignment</i>
+            
+            <select>
+              <option value ="" disabled selection>Type of Pet</option>
+              <option value="Dog"> Dog </option>
+              <option value ="Cat"> Cat </option>
+              <option value ="Bird"> Bird</option>
+              <option value ="Lizzard">Lizzard</option>
+              <option value ="Rabbit">Rabbit</option>
+              <option value = "Guinea Pig">Guinea Pig</option>
+              <option value="Turtle">Turtle</option>
+              <option value="Other">Other</option>
+            </select>
             <label for="pet_Type">Type</label>
           </div>
 
@@ -48,7 +59,9 @@
         </div>
       </form>
     </div>
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script>$(document).ready(function(){
+      $('select').formSelect();
+      });</script>
 
-
-
-      <script src="./js/newPet.js"></script>
+      <script> src="../public/js/newPet.js"</script>
