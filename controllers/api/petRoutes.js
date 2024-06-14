@@ -44,7 +44,7 @@ router.get("/allpets", async (req, res) => {
 
 
 //RENDERS ADOPTION APPLICATION/INQUIRY FORM
-router.get("/adoptapp", async (req, res) => {
+router.get("/adoptionapp", async (req, res) => {
   try {
     res.render("adoptionapp", { layout: 'main' });
   }
