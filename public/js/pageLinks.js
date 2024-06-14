@@ -17,17 +17,3 @@
 //     destinationUrl: 'http://example.com/other-page'
 // };
 // document.getElementById('output').innerHTML = template(data);
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Example of adding a click event listener to the links
-    const links = document.querySelectorAll('nav a');
-
-    links.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            window.location.href = this.href;
-        });
-    });
-
-    console.log('JavaScript file loaded');
-});

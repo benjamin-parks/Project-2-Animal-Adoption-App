@@ -14,7 +14,8 @@ Pet.init(
     pet_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true, 
+      unique: true,
+      isAlpha: true
     },
     pet_age: {
       type: DataTypes.INTEGER,
