@@ -53,3 +53,55 @@
 // });
 
 // module.exports = router;
+
+const router = require('express').Router();
+const { Employee } = require('../../models');
+
+router.post('/login', async (req, res) => {
+  try {
+    // Find the user who matches the posted e-mail address
+    const employeeData = await Employee.findOne({ where: { email: req.body.employee_email } });
+
+    if (!employeeData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    // Verify the posted password with the password store in the database
+    const validPassword = await employeeData.checkPassword(req.body.employee_password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    // Create session variables based on the logged in user
+    req.session.save(() => {
+      req.session.id = employeeData.id;
+      req.session.logged_in = true;
+      
+      res.json({ user: employeeData, message: 'You are now logged in!' });
+    });
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    // Remove the session variables
+    req.session.destroy(() => {
+      res.status(204).end();
+      res.redirect('/login');
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+module.exports = router;
