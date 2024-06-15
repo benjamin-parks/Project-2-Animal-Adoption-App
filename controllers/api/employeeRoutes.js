@@ -3,7 +3,7 @@
 const router = require('express').Router();
 const { User, Pet, Customer, Employee } = require('../../models');
 const path = require('path');
-const { hashPassword, validatePassword } = require('../../utils/helpers');
+// const { hashPassword, validatePassword } = require('../../utils/helpers');
 
 
 
@@ -56,69 +56,107 @@ const { hashPassword, validatePassword } = require('../../utils/helpers');
 
 
 /////////////// POSTS UNDER THIS LINE //////////////////////
+// app.post('/signup', async (req, res) => {
+//   try {
+//       const { username, password } = req.body;
+//       const hashedPassword = await bcrypt.hash(password, 10);
+//       const newUser = await User.create({
+//           username,
+//           hash_pword: hashedPassword
+//       });
+//       res.status(200).json(newUser);
+//       return;
+//   } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//   }
+// });
+// app.post('/login', async (req, res) => {
+//   try {
+//       const { username, password } = req.body;
+//       const user = await User.findOne({
+//           where: { username }
+//       });
+//       if (!user) {
+//           res.status(404).json({ message: 'User not found' });
+//           return;
+//       }
+//       const isValidPassword = await bcrypt.compare(password, user.hash_pword);
+//       if (!isValidPassword) {
+//           res.status(401).json({ message: 'Invalid password' });
+//           return;
+//       }
+//       res.status(200).json({ message: 'Login successful' });
+//   } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//   }
+// });
+// sequelize.sync().then(() => {
+//   app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
+// });
 
 
 
 
+// //employee login route
+// router.post('/login', async (req, res) => {
+//   try {
+//     // The findOne() method is used to find a single document in the collection that matches the query. In this case, it is used to find a user by their email address.
+//     const employeeData = await Employee.findOne({ where: { email: req.body.email } });
 
-//employee login route
-router.post('/login', async (req, res) => {
-  try {
-    // The findOne() method is used to find a single document in the collection that matches the query. In this case, it is used to find a user by their email address.
-    const employeeData = await Employee.findOne({ where: { email: req.body.email } });
+//     if (!employeeData) {
+//       res
+//         .status(400)
+//         .json({ message: 'Incorrect email or password, please try again' });
+//       return;
+//     }
 
-    if (!employeeData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
-    }
+//     const validPassword = await validatePassword(req.body.password);
 
-    const validPassword = await validatePassword(req.body.password);
+//     if (!validPassword) {
+//       res
+//         .status(400)
+//         .json({ message: 'Incorrect email or password, please try again' });
+//       return;
+//     }
 
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
-    }
-
-    // The save() method is used to save the session and will store the session in the store.
-    req.session.save(() => {
-      req.session.employee_id = employeeData.id;
-      req.session.logged_in = true;
-      req.session.employee = true;
+//     // The save() method is used to save the session and will store the session in the store.
+//     req.session.save(() => {
+//       req.session.employee_id = employeeData.id;
+//       req.session.logged_in = true;
+//       req.session.employee = true;
       
-      res.sendFile(path.join(__dirname, '../../public/home.html'));
-    });
+//       res.sendFile(path.join(__dirname, '../../public/home.html'));
+//     });
 
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
-//employee signup route
-router.post('/signup', async (req, res) => {
-  try {
-    const hashedPassword = await hashPassword(req.body.password);
-    const newEmployee = await User.create({
-      name: req.body.name,
-      email: req.body.email,
-      phone: req.body.phone,
-      password: hashedPassword,
-    });
+// //employee signup route
+// router.post('/signup', async (req, res) => {
+//   try {
+//     const hashedPassword = await hashPassword(req.body.password);
+//     const newEmployee = await User.create({
+//       name: req.body.name,
+//       email: req.body.email,
+//       phone: req.body.phone,
+//       password: hashedPassword,
+//     });
 
-    req.session.save(() => {
-      req.session.user_id = newEmployee.id;
-      req.session.logged_in = true;
+//     req.session.save(() => {
+//       req.session.user_id = newEmployee.id;
+//       req.session.logged_in = true;
 
-      res.json({ employee: newEmployee, message: 'You are now signed up!' });
-    });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json(err);
-  }
-});
+//       res.json({ employee: newEmployee, message: 'You are now signed up!' });
+//     });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 
 // post route for employee to add a new pet
