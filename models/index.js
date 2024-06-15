@@ -1,4 +1,4 @@
-const Customer = require('./customer');
+// const Customer = require('./customer');
 // const Employee = require('./employee');
 const Pet = require('./pet');
 const Inquiries = require('./inquiries');

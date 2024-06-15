@@ -1,4 +1,4 @@
-const loginForm = async (event) => {
+const loginFormHandler = async (event) => {
     event.preventDefault();
   
     // Collects values from the login form
@@ -15,13 +15,14 @@ const loginForm = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to the pets(or whatever we call the page with all the pets available for adoption)
-        document.location.replace('/pets');
+        document.location.replace('/employeehome');   /// from /pets to /employeehome ////
       } else {
-        alert(response.statusText);
+        alert('Failed to log in');   //// response.statusText to 'Failed to log in'
       }
     }
   };
   
+
   const signupFormHandler = async (event) => {
     event.preventDefault();
   
@@ -46,22 +47,27 @@ const loginForm = async (event) => {
     }
   };
   
-  document.querySelector('#login-form').addEventListener('submit', loginForm);
-  document .querySelector('#signup-form').addEventListener('submit', signupForm);
+  document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+  document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);   
+
+
+
+
+
 
   //handle the logout button
-  const logout = async () => {
-    const response = await fetch('/employee/logout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-    });
-    if (response.ok) {
-      document.location.replace('/employee/login');
-    } else {
-      alert(response.statusText);
-    }
-  };
+  // const logout = async () => {
+  //   const response = await fetch('/employee/logout', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //   });
+  //   if (response.ok) {
+  //     document.location.replace('/employee/login');
+  //   } else {
+  //     alert(response.statusText);
+  //   }
+  // };
   
-  document.querySelector('#logout').addEventListener('click', logout);
-  document.querySelector('#logout-mobile').addEventListener('click', logout);
+  // document.querySelector('#logout').addEventListener('click', logout);
+  // document.querySelector('#logout-mobile').addEventListener('click', logout);
   

@@ -3,13 +3,11 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 const employeeRoutes = require('./employeeRoutes');
-// const petRoutes = require('./petRoutes');
-// const petRoutes = require('./petRoutes');
+
 
 router.use('/users', userRoutes);
 router.use('/employees', employeeRoutes);
-// router.use('/home', petRoutes);
-// router.use('/pets', petRoutes);
+
 
 
 module.exports = router;
