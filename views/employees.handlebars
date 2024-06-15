@@ -12,13 +12,15 @@
             </thead>
             
             <tbody>
+              {{#each employeesArray}}
               <tr>
-                <td>{{employee.id}}</td>
-                <td>{{employee.employee_name}}</td>
-                <td>{{employee.employee_email}}</td>
-                <td>{{employee.employee_phone}}</td>
-                <td><a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">clear</i></a></td>
+                <td>{{id}}</td>
+                <td>{{employee_name}}</td>
+                <td>{{employee_email}}</td>
+                <td>{{employee_phone}}</td>
+                <td><a class="btn-floating btn-small waves-effect waves-light red" onclick="deleteEmployee({{id}})"><i class="material-icons">clear</i></a></td>
               </tr>
+              {{/each}}
               <tr>
               </tbody>
               

@@ -1,33 +1,32 @@
 <h4 class="center">Adoption Inquiries</h4>
 
-        <div class="col s10 pet-table ">
-          <table class="highlight">
-            <thead>
-              <tr class="grey lighten-3 tabpad">
-                <th>ID</th>
-                <th>Name</th>
-                <th>Animal Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Submitted</th>
-                <th>Approve</th>
-                <th>Deny</th>
-              </tr>
-            </thead>
-      
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Clinton Shay</td>
-                <td>Piper</td>
-                <td>clinton@email.com</td>
-                <td>789-568-6754</td>
-                <td>05/05/2024</td>
-                <td><a class="btn-floating btn-small waves-effect waves-light green"><i class="material-icons">check</i></a></td>
-                <td><a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">clear</i></a></td>
-              </tr>
-            </tbody>
-
-          </table>
-  
-        </div>
+<div class="col s10 pet-table">
+  <table class="highlight">
+    <thead>
+      <tr class="grey lighten-3 tabpad">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Animal Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Submitted</th>
+        <th>Approve</th>
+        <th>Deny</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each petsArray}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{customer_name}}</td>
+        <td>{{pet_name}}</td>
+        <td>{{customer_email}}</td>
+        <td>{{customer_phone}}</td>
+        <td>{{updated_at}}</td>
+        <td><a id="approve-{{id}}" class="btn-floating btn-small waves-effect waves-light green approve-button-bp" onclick="approveInquiry({{id}})"><i class="material-icons">check</i></a></td>
+        <td><a id="delete-{{id}}" class="btn-floating btn-small waves-effect waves-light red delete-button-bp" onclick="denyInquiry({{id}})"><i class="material-icons">clear</i></a></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

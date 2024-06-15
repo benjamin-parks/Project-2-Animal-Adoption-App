@@ -28,7 +28,11 @@ Inquiries.init(
       references: {
         model: 'pet',
         key: 'id',
-      },
+      }
+    },
+    customer_message: {
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
   },
   {
