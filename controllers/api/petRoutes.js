@@ -69,7 +69,7 @@ router.get("/newpet", async (req, res) => {
 //POSTS NEW PET
 router.post("/newpet", async(req, res) => {
   try {
-    let pet_image = '../../public/images/pets/default.jpg'; // Declare pet_image variable outside of the if block
+    let pet_image = './images/pets/placeholder.png'; // Declare pet_image variable outside of the if block
     
     if (req.body.pet_image) { // Check if pet_image is provided
       pet_image = req.body.pet_image; // Assign provided pet_image value
@@ -108,7 +108,20 @@ router.get("/newemployee", async (req, res) => {
 //RENDERS EMPLOYEE PORTAL HOME PAGE - ACTIVE PET PROFILES IS THE DEFAULT VIEW
 router.get("/employeehome", async (req, res) => {
   try {
-    res.render("employeehome", { layout: 'employeemain' });
+    const pets = await Pet.findAll();
+    const petsArray = pets.map(pet => {
+      return {
+        id: pet.id,
+        pet_name: pet.pet_name,
+        pet_age: pet.pet_age,
+        pet_type: pet.pet_type,
+        pet_breed: pet.pet_breed,
+      };
+    });
+    console.log("test", petsArray);
+    res.render("employeehome", { 
+      layout: 'employeemain',
+      petsArray});
   }
   catch(err) {
     res.status(500).send("Page Not Found");
@@ -205,6 +218,25 @@ router.delete('/employees/:id', async (req, res) => {
 });
 
 
+// delete pet from database based on ID
+router.delete('/deletepet/:id', async (req, res) => {
+  try {
+    const petData = await Pet.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!petData) {
+      res.status(404).json({ message: 'No pet found with this id' });
+      return;
+    }
+    res.status(200).json(petData);
+  } catch (err) {
+    console.error('Error details:', err);
+    res.status(500).json(err);
+  }
+});
+
 
 // update pet availabilty to false at given ID 
 // router.put('/petinquiries/approve/:id', async (req, res) => {
@@ -296,8 +328,12 @@ router.delete('/petinquiries/deny/:id', async (req, res) => {
 
 // pet adoption form
 router.get("/inquiries", async (req, res) => {
-
-  res.sendFile(path.join(__dirname, '../../views/adoptionapp_copy.html'));
+  try {
+    res.render("adoptionapp", { layout: 'main' });
+  }
+  catch(err) {
+    res.status(500).send("Form Not Found");
+  }
 });
 
 // post route for pet adoption form based on ../../public/js/adoptionForm.js
