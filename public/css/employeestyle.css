@@ -20,7 +20,14 @@
   color: black; 
 }
 
+/*------ log in page -----*/
+.logInContent {
+  margin-top: 10%;
+}
 
+.login-form {
+  margin-top: 10%;
+}
 
 
 /*------ main styles ------*/
