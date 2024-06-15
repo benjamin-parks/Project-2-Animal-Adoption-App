@@ -1,15 +1,15 @@
 // This file will contain the routes to handle user login and logout.
 // The login route will be used to log a user in by checking their email and password against the database.
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Employee } = require('../../models');
 
 
 router.post('/login', async (req, res) => {
   try {
     // The findOne() method is used to find a single document in the collection that matches the query. In this case, it is used to find a user by their email address.
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const employeeData = await Employee.findOne({ where: { email: req.body.email } });
 
-    if (!userData) {
+    if (!employeeData) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
@@ -17,7 +17,7 @@ router.post('/login', async (req, res) => {
     }
 
     // The checkPassword() method is used to check the password entered by the user against the hashed password stored in the database.
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await employeeData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -28,7 +28,7 @@ router.post('/login', async (req, res) => {
 
     // The save() method is used to save the session and will store the session in the store.
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = employeeDataData.id;
       req.session.logged_in = true;
       req.session.employee = false;
       
