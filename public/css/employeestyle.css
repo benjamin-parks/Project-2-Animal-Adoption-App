@@ -20,7 +20,18 @@
   color: black; 
 }
 
+/*------ log in page -----*/
+.logInContent {
+  margin-top: 10%;
+}
 
+.login-form {
+  margin-top: 10%;
+}
+
+.signup-form {
+  margin-top: 10%;
+}
 
 
 /*------ main styles ------*/
@@ -54,19 +65,19 @@
 
 
 
-.employee-nav {
+/* .employee-nav {
   display: flex;
   flex-direction: row;
-}
+} */
 
-.employee-nav ul {
+/* .employee-nav ul {
 
   padding: 0;
   margin: 0 15px;
-}
+} */
 
 
-@media (min-width: 993px) {
+/* @media (min-width: 993px) {
   .employee-nav {
     flex-direction: column;
   }
@@ -76,7 +87,7 @@
     display: block;
     justify-content: center;
   }
-}
+} */
 
 
 /* style add image button on new pet form. */

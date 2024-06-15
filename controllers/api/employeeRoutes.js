@@ -5,79 +5,32 @@ const { User, Pet, Customer, Employee } = require('../../models');
 const path = require('path');
 const { hashPassword, validatePassword } = require('../../utils/helpers');
 
-// router.get('/', async (req, res) => {
-    // uncomment once we have login-session functionality
-  // if (!req.session.logged_in && !req.session.employee) {
-  //   res.redirect('/employeelogin');
-  //   return;
-  // }
-//   try{
-//     res.sendFile(path.join(__dirname, '../../views/04-employee-home.html'));
-//     }
+
+
+
+// router.get('/inquiries', async (req, res) => {
+//     // uncomment once we have login-session functionality
+//   // if (!req.session.logged_in && !req.session.employee) {
+//   //   res.redirect('/employeelogin');
+//   //   return;
+//   // }
+//   try {
+//     res.sendFile(path.join(__dirname, '../../views/05-adoption-inquiries.html'));
+//   }
 //   catch (err) {
 //     res.status(500).json(err);
 //   }
 // });
 
 
-router.get('/inquiries', async (req, res) => {
-    // uncomment once we have login-session functionality
-  // if (!req.session.logged_in && !req.session.employee) {
-  //   res.redirect('/employeelogin');
-  //   return;
-  // }
-  try {
-    res.sendFile(path.join(__dirname, '../../views/05-adoption-inquiries.html'));
-  }
-  catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-
-router.get('/login', async (req, res) => {
-  // uncomment once we have login-session functionality
-  // if (!req.session.logged_in && !req.session.employee) {
-  //   res.redirect('/employeelogin');
-  //   return;
-  // }
-  try {
-    res.sendFile(path.join(__dirname, '../../views/03-employee-login.html'));
-  }
-  catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-
-
-
-// router.get("/newemployee", async (req, res) => {
-//   try {
-//     res.render("newemployee", { layout: 'employeemain' });
-//   }
-//   catch(err) {
-//     res.status(500).send("Form Not Found");
-//   }
-// });
-
-// router.post("/newemployee", async(req, res) => {
-//   const employee = await Employee.create(req.body);
-//   res.status(200).json(employee);
-// });
-
-
-
-
-
-// router.get('/listemployees', async (req, res) => {
+// router.get('/login', async (req, res) => {
 //   // uncomment once we have login-session functionality
 //   // if (!req.session.logged_in && !req.session.employee) {
 //   //   res.redirect('/employeelogin');
 //   //   return;
 //   // }
 //   try {
-//     res.sendFile(path.join(__dirname, '../../views/06-employees.html'));
+//     res.sendFile(path.join(__dirname, '../../views/03-employee-login.html'));
 //   }
 //   catch (err) {
 //     res.status(500).json(err);
@@ -86,42 +39,21 @@ router.get('/login', async (req, res) => {
 
 
 
-router.get('/wishlist', async (req, res) => {
-  // uncomment once we have login-session functionality
-  // if (!req.session.logged_in && !req.session.employee) {
-  //   res.redirect('/employeelogin');
-  //   return;
-  // }
-  try {
-    res.sendFile(path.join(__dirname, '../../views/07-wish-list.html'));
-  }
-  catch (err) {
-    res.status(500).json(err);
-  }
-});
 
-// router.get('/adopt', async (req, res) => {
-  // uncomment once we have login-session functionality
-  // if (!req.session.logged_in && !req.session.employee) {
-  //   res.redirect('/employeelogin');
-  //   return;
-  // }
+// router.get('/wishlist', async (req, res) => {
+//   // uncomment once we have login-session functionality
+//   // if (!req.session.logged_in && !req.session.employee) {
+//   //   res.redirect('/employeelogin');
+//   //   return;
+//   // }
 //   try {
-//     res.sendFile(path.join(__dirname, '../../views/adoptionapp.html'));
+//     res.sendFile(path.join(__dirname, '../../views/07-wish-list.html'));
 //   }
 //   catch (err) {
 //     res.status(500).json(err);
 //   }
 // });
 
-// router.get('/addpet', async (req, res) => {
-//   try{
-//     res.sendFile(path.join(__dirname, '../../views/newpet-draft_copy.html'));
-//   }
-//   catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 /////////////// POSTS UNDER THIS LINE //////////////////////
 
