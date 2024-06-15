@@ -17,17 +17,19 @@
             </thead>
       
             <tbody>
+              {{#each petsArray}}
               <tr>
-                <td>{{pet.id}}</td>
-                <td>{{pet.pet_name}}</td>
-                <td>{{pet.pet_age}}</td>
-                <td>{{pet.pet_type}}</td>
-                <td>{{pet.pet_breed}}</td>
-                <td></td>
-                <td></td>
+                <td>{{this.id}}</td>
+                <td>{{this.pet_name}}</td>
+                <td>{{this.pet_age}}</td>
+                <td>{{this.pet_type}}</td>
+                <td>{{this.pet_breed}}</td>
+                <td>{{this.created_at}}</td>
+                <td>{{this.pet_status}}</td>
                 <td><a class="btn-floating btn-small waves-effect waves-light blue"><i class="material-icons">create</i></a></td>
-                <td><a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">clear</i></a></td>
+                <td><a class="btn-floating btn-small waves-effect waves-light red" onclick="deletePet({{this.id}})"><i class="material-icons">clear</i></a></td>
               </tr>
+              {{/each}}
             </tbody>
             
           </table>
