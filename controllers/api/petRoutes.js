@@ -420,6 +420,7 @@ router.post('/signup', async (req, res) => {
 
       res.status(200).json(employeeData);
       console.log(employeeData)
+      res.redirect('/employeehome');
     });
   } catch (err) {
     res.status(400).json(err);
