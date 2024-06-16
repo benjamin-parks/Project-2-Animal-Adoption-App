@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         console.log("post response: ", response);
         if (response.ok) {
-          document.location.replace('/');
+          document.location.replace('/employeehome');
         } else {
           throw new Error('Login failed');
         }
