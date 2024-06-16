@@ -92,6 +92,27 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+router.post('/signup', async (req, res) => {
+  try {
+    const employeeData = await Employee.create({
+      employee_name: req.body.name,
+      employee_email: req.body.email,
+      employee_phone: req.body.phone,
+      employee_password: req.body.password,
+    });
+
+    req.session.save(() => {
+      req.session.user_id = employeeData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(employeeData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     // Remove the session variables
