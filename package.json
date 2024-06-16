@@ -20,6 +20,7 @@
     "express-session": "^1.17.1",
     "materialize-css": "^1.0.0-rc.2",
     "pg": "^8.11.3",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "start": "^5.1.0"
   }
 }

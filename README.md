@@ -1,11 +1,9 @@
-
 # Paws & Claws Animal Adoption Application
 
 Welcome to Paws and Claws, an intuitive and user-friendly animal adoption application designed to help animals find their forever homes. Our platform connects potential pet adopters with a variety of rescued animals, making the adoption process seamless and efficient. This is project 2 for the U of M Coding Bootcamp. The challenge was to build a real-world interactive full-stack application using everything we have learned over the past 6 modules.
 
 ## Key Features
 Users:
-- **User Registration and Profiles:** Users can create profiles, save favorite animals for future reference, and submit adoption inquiry applications.
 - **Browse and Search:** Explore a wide range of animals available for adoption.
 - **Detailed Animal Profiles:** Each animal has a comprehensive profile with name, photo, and description
 - **Adoption Application:** Users can fill out and submit adoption applications directly through the platform, streamlining the process.
@@ -17,14 +15,12 @@ Employees:
 
 
 ## Screenshots
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
+![Paws and CLaws Home Page](<public/images/Paws and Claws Home Page.gif>)
 ## Usage Information
-Insert usage information
+This application will be used by both a user and employee. The user will be able to look at animals that are up for adoption and submit an adoption application.The employee will then be able to login in and see the pending adoption applicaitons and approve or deny them. The employee will also be able to add animals that will be up for adoption to the website.
 
 ## Demo
-Insert link to demo
+[Link to Deployed Application](https://project-2-animal-adoption-app.onrender.com/)
 
 
 ## Tech Stack
@@ -36,21 +32,21 @@ Insert link to demo
 - **Package Management:** npm
 
 ## Deployed Application
-Link to the website
+[Link to Paws and Claws Render Page](https://project-2-animal-adoption-app.onrender.com/)
 
 ## Lessons Learned
 What did we learn/challenges/successes while building this project
 
 
 ## Roadmap
-What do we plan to add/update in the future
+We here at Paws and Claws plan to add a user login to better customize the experience. We also plan on adding a favorite page so you can favorite the animals that are up for adoption, so you can come back later and still have the animals that you had previously looked at right in front of you. We also plan on adding a function that will allow employees to easily add images to new animals that are up for adoption.
 
 
 ## Contributors and Roles
-- [Alex Larrabee](https://github.com/alarrabee): what alex worked on
-- [Ben Parks](https://github.com/benjamin-parks):  what ben worked on
-- [Eli Ward](https://github.com/ElijahWard4): what eli worked on
-- [Jaci Obeidzinski](https://github.com/JaciObeid): what jaci worked on
+- [Alex Larrabee](https://github.com/alarrabee): Handlebars, Layout and CSS
+- [Ben Parks](https://github.com/benjamin-parks):  Databases and Linking
+- [Eli Ward](https://github.com/ElijahWard4): Routes and Authentication
+- [Jaci Obeidzinski](https://github.com/JaciObeid): Server, Config. and Form set ups
 
 
 ## Acknowledgements
