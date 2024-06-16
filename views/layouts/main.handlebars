@@ -22,7 +22,11 @@
         {{!-- <li ><a href="#" class="headText">Favorites</a></li> --}}
         <li><a href="./home.html" class="headText">Home</a></li>
         <li><a href="./about-us.html" class="headText">About Us</a></li>
-        <li><a href="#" class="btn-small waves-effect waves-#212121 grey darken-3">Log Out</a></li>
+        {{#if logged_in}}
+        <li><a href="/" id="logout" class="btn-small waves-effect waves-#212121 grey darken-3">Log Out</a></li>
+        {{!-- {{else}}
+        <li><a href="/login" class="btn-small waves-effect waves-#212121 grey darken-3">Log in</a></li> --}}
+        {{/if}}
       </ul>
 
       <!-- Side Navigation Trigger -->
@@ -30,7 +34,11 @@
         {{!-- <li><a href="#">Favorites</a></li> --}}
         <li><a href="./home.html">Home</a></li>
         <li><a href="./about-us.html">About Us</a></li>
-        <li><a href="#">Log Out</a></li>
+        {{#if logged_in}}
+        <li><a href="/" id="logout">Log Out</a></li>
+        {{!-- {{else}}
+        <li><a href="/login" id="login">Log in</a></li> --}}
+        {{/if}}
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
     </div>

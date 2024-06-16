@@ -365,7 +365,12 @@ router.post('/inquiries', async (req, res) => {
 
 
 router.get('/login', async (req, res) => {
-  res.render('login', { layout: 'main' });
+  if (req.session.logged_in) {
+    res.redirect('/employeehome');
+  }
+  else{
+    res.render('login', { layout: 'main' });
+  }
 });
 
 router.post('/login', async (req, res) => {
@@ -424,16 +429,18 @@ router.post('/signup', async (req, res) => {
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     // Remove the session variables
-    req.session.destroy(() => {
-      res.status(204).end();
-      res.redirect('/login');
+    req.session.destroy((err) => {
+      if (err) {
+        res.status(500).json(err);
+      } else {
+        // Redirect to login page after session destruction
+        res.status(204).redirect('/login');
+      }
     });
   } else {
     res.status(404).end();
   }
 });
-
-
 
 
 

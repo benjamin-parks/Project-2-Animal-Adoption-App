@@ -21,14 +21,12 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="/newpet" class="headText">Add Pet</a></li>
         <li><a href="/newemployee" class="headText">Add Employee</a></li>
-        {{#if logged_in}}
-        <li><a href="#" class="btn-small waves-effect waves-#212121 grey darken-3" id="logout">Log Out</a></li>
-        {{/if}}
+        <li><a href="/" id="logout" class="btn-small waves-effect waves-#212121 grey darken-3">Log Out</a></li>
       </ul>
 
       <!-- Side Navigation Trigger -->
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Log Out</a></li>
+        <li><a href="/" id="logout">Log Out</a></li>
         <li><a href="/newemployee">Add Employee</a></li>
         <li><a href="/newpet">Add Animal</a></li>
       </ul>
@@ -88,9 +86,7 @@
   <script src="./js/newPet.js"></script>
   <script src="./js/deletePet.js"></script>
 
-  {{#if logged_in}}
   <script src="/js/logout.js"></script>
-  {{/if}}
 
   </body>
 </html>
