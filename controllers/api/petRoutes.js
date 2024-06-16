@@ -364,6 +364,83 @@ router.post('/inquiries', async (req, res) => {
 });
 
 
+router.get('/login', async (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/employeehome');
+  }
+  else{
+    res.render('login', { layout: 'main' });
+  }
+});
+
+router.post('/login', async (req, res) => {
+  try {
+    const { employee_email, employee_password } = req.body;
+
+    // Find the employee by email
+    const employeeData = await Employee.findOne({ where: { employee_email } });
+
+    if (!employeeData) {
+      return res.status(400).json({ message: 'Incorrect email or password, please try again.' });
+    }
+
+    // Check if the entered password matches the hashed password in the database
+    const isValidPassword = employeeData.checkPassword(employee_password);
+
+    if (!isValidPassword) {
+      return res.status(400).json({ message: 'Incorrect email or password, please try again.' });
+    }
+
+    // Set up session for the logged in user
+    req.session.user_id = employeeData.id;
+    req.session.logged_in = true;
+    req.session.save(() => {
+      res.json({ user: employeeData, message: 'You are now logged in!' });
+    });
+
+  } catch (err) {
+    console.error('Error logging in:', err.message);
+    res.status(500).json({ message: 'Server error. Please try again later.' });
+  }
+});
+
+
+router.post('/signup', async (req, res) => {
+  try {
+    const employeeData = await Employee.create({
+      employee_name: req.body.employee_name,
+      employee_email: req.body.employee_email,
+      employee_phone: req.body.employee_phone,
+      employee_password: req.body.employee_password,
+    });
+
+    req.session.save(() => {
+      req.session.user_id = employeeData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(employeeData);
+      console.log(employeeData)
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    // Remove the session variables
+    req.session.destroy((err) => {
+      if (err) {
+        res.status(500).json(err);
+      } else {
+        // Redirect to login page after session destruction
+        res.status(204).redirect('/login');
+      }
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 
 
