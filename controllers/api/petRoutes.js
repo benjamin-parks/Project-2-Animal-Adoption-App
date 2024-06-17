@@ -418,7 +418,7 @@ router.post('/signup', async (req, res) => {
       req.session.user_id = employeeData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(employeeData);
+      // res.status(200).json(employeeData);
       console.log(employeeData)
       res.redirect('/employeehome');
     });
