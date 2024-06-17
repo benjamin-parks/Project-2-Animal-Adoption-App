@@ -9,9 +9,6 @@
                 <th>Age</th>
                 <th>Type</th>
                 <th>Breed</th>
-                <th>Date Added</th>
-                <th>Status</th>
-                {{!-- <th>Update</th> --}}
                 <th>Delete</th>
               </tr>
             </thead>
@@ -24,9 +21,6 @@
                 <td>{{this.pet_age}}</td>
                 <td>{{this.pet_type}}</td>
                 <td>{{this.pet_breed}}</td>
-                <td>{{this.created_at}}</td>
-                <td>{{this.pet_status}}</td>
-                {{!-- <td><a class="btn-floating btn-small waves-effect waves-light blue"><i class="material-icons">create</i></a></td> --}}
                 <td><a class="btn-floating btn-small waves-effect waves-light red" onclick="deletePet({{this.id}})"><i class="material-icons">clear</i></a></td>
               </tr>
               {{/each}}
