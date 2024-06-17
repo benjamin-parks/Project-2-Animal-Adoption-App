@@ -26,7 +26,7 @@
                 <td>{{this.pet_breed}}</td>
                 <td>{{this.created_at}}</td>
                 <td>{{this.pet_status}}</td>
-                <td><a class="btn-floating btn-small waves-effect waves-light blue"><i class="material-icons">create</i></a></td>
+                {{!-- <td><a class="btn-floating btn-small waves-effect waves-light blue"><i class="material-icons">create</i></a></td> --}}
                 <td><a class="btn-floating btn-small waves-effect waves-light red" onclick="deletePet({{this.id}})"><i class="material-icons">clear</i></a></td>
               </tr>
               {{/each}}
