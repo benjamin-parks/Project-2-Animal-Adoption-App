@@ -34,9 +34,6 @@ This application will be used by both a user and employee. The user will be able
 ## Deployed Application
 [Link to Paws and Claws Render Page](https://project-2-animal-adoption-app.onrender.com/)
 
-## Lessons Learned
-What did we learn/challenges/successes while building this project
-
 
 ## Roadmap
 We here at Paws and Claws plan to add a user login to better customize the experience. We also plan on adding a favorite page so you can favorite the animals that are up for adoption, so you can come back later and still have the animals that you had previously looked at right in front of you. We also plan on adding a function that will allow employees to easily add images to new animals that are up for adoption.
